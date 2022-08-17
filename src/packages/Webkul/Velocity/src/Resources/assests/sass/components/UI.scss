@@ -1,0 +1,989 @@
+@import "../main/variables";
+
+
+.qty-btn {
+  height: 36px;
+  display: inline-block;
+
+  > * {
+    height: 36px;
+    padding: 0px 10px;
+    border: 1px solid $border-common;
+    vertical-align: top;
+    line-height: 3.5rem;
+    display: inline-block;
+  }
+
+  > *:not(:first-child) {
+    border-left: none;
+    position: relative;
+  }
+
+  > *:not(:nth-child(2)) {
+    @extend .cursor-pointer !optional;
+  }
+
+  > *:nth-child(2) {
+    left: -4px;
+  }
+
+  > *:nth-child(3) {
+    left: -7px;
+  }
+}
+
+.btn-add-to-cart {
+  padding: 3px 14px !important;
+  border-radius: 0px !important;
+  color: $white-color !important;
+  border-color: $main-blue-900 !important;
+  background-color: $main-blue-900 !important;
+
+  &.large {
+    padding: 12px 18px;
+  }
+
+  .rango-cart-1 {
+    padding-right: 5px;
+  }
+}
+
+.accordian {
+  .accordian-header {
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    color: #3a3a3a;
+    padding: 20px 0;
+    display: inline-block;
+    border-bottom: 1px solid #d3d3d3;
+
+    i.rango-arrow {
+      float: right;
+      font-size: 24px;
+    }
+
+    i.rango-arrow::before {
+      content: "\E908";
+    }
+  }
+
+  .accordian-content {
+    width: 100%;
+    display: none;
+    padding-bottom: 20px;
+  }
+
+  &.active {
+    .accordian-header {
+      border-bottom: 0;
+
+      i.rango-arrow::before {
+        content: "\E906";
+      }
+    }
+
+    .accordian-content {
+      display: inline-block;
+      border-bottom: 1px solid #d3d3d3;
+    }
+  }
+}
+
+#date-of-birth:after {
+  background-image: url(../images/icon-calendar.svg);
+  width: 24px;
+  height: 24px;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -34px;
+  pointer-events: none;
+  position: absolute;
+  top: 14%;
+}
+
+.rtl {
+  #date-of-birth:after {
+    left: 54px;
+  }
+}
+
+//======================Стили для UI KIT===============================//
+
+/*==================Это стили для кнопок==================*/
+
+.button {
+  &--xxl {
+    width: 220px;
+    height: 56px;
+  }
+
+  &--xl {
+    width: 220px;
+    height: 48px;
+  }
+
+  &--lg {
+    width: 120px;
+    height: 44px;
+  }
+
+  &--md {
+    width: 113px;
+    height: 40px;
+  }
+
+  &--sm {
+    width: 84px;
+    height: 44px;
+  }
+
+  &--xs {
+    width: 77px;
+    height: 40px;
+  }
+
+  &--search {
+    font-size: 15px;
+
+    &--lg {
+      width: 56px;
+      height: 56px;
+    }
+
+    &--md {
+      width: 48px;
+      height: 48px;
+    }
+
+    &--sm {
+      width: 44px;
+      height: 44px;
+    }
+
+    &--xs {
+      width: 40px;
+      height: 40px;
+    }
+
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: $main-blue-900;
+  border: 1px solid $main-blue-900;
+  font-weight: 600;
+  line-height: 24px;
+  color: $mono-white;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s ease;
+
+  &:disabled,
+  &:disabled:hover {
+    background-color: $mono-light-grey2;
+    border-color: $mono-light-grey2;
+    color: $mono-grey;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $main-blue-800;
+    border-color: $main-blue-800;
+  }
+
+  &:active {
+    background-color: $main-blue-600;
+    border-color: $main-blue-600;
+  }
+
+  &--transparent {
+    background-color: initial;
+    color: $main-blue-900;
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: initial;
+      border-color: $mono-light-grey2;
+      color: $mono-grey;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: initial;
+      color: $main-blue-800;
+    }
+
+    &:active {
+      background-color: initial;
+      border-color: $main-blue-600;
+      color: $main-blue-600;
+    }
+  }
+
+  &--borderless {
+    background-color: transparent;
+    border: initial;
+    color: $main-blue-900;
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: initial;
+      border-color: initial;
+      color: $mono-grey;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: initial;
+      color: $main-blue-800;
+    }
+
+    &:active {
+      background-color: initial;
+      border-color: $main-blue-600;
+      color: $main-blue-600;
+    }
+  }
+
+
+  .small {
+    font-size: 12px;
+  }
+}
+
+.location {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  line-height: 14px;
+  color: $mono-dark-black;
+
+  &:hover,
+  &:focus {
+    color: $main-blue-900;
+  }
+
+  &:active {
+    color: $main-blue-900;
+  }
+
+}
+
+.delivery {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: $mono-dark-black;
+
+  .ui_truck {
+    font-size: 18px;
+
+    &:hover,
+    &:focus {
+      color: $mono-dark-black !important;
+    }
+
+    &:active {
+      color: $mono-dark-black;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $main-blue-900;
+  }
+
+  &:active {
+    color: $main-blue-900;
+  }
+
+}
+
+
+/*==================Это стили для Списков==================*/
+.group {
+  &--list {
+    overflow-y: scroll;
+    height: 200px;
+    width: 250px;
+    list-style: none;
+    padding: 8px;
+    background: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+
+    &--sm {
+      height: 180px;
+
+    }
+  }
+
+  &--item {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 20px;
+    border-radius: 8px;
+
+    //Стилизация Чекбокса
+
+    &--right--checkbox {
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .checkbox--input {
+        -webkit-appearance: none;
+        appearance: none;
+        position: absolute;
+      }
+
+      .checkbox--label {
+        //position: relative;
+        cursor: pointer;
+      }
+
+      .checkbox--label:before {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 16px;
+        z-index: 1;
+        //background-color: red;
+
+      }
+
+      .checkbox--label .ui_tick {
+        display: block;
+        position: absolute;
+        font-size: 10px;
+        top: 50%;
+        color: $main-blue-900;
+        opacity: 0;
+        transform: translateY(-50%);
+        right: 16px;
+        z-index: 2;
+
+      }
+
+      .checkbox--input:checked + .checkbox--label .ui_tick {
+        opacity: 1;
+      }
+    }
+
+    &--left--checkbox {
+      display: flex;
+      align-items: center;
+
+      .checkbox--input {
+        height: 16px;
+        width: 16px;
+        background-color: $main-blue-900;
+        border-radius: 4px;
+        border: 1px solid $mono-dark-grey;
+        margin-right: 8px;
+      }
+
+      .checkbox--label {
+        cursor: pointer;
+      }
+
+    }
+
+    &--sm {
+      padding: 6px 12px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $mono-bg-grey;
+      color: $main-blue-900;
+    }
+
+
+  }
+
+
+}
+
+
+/*==================Это стили для Тегов==================*/
+
+.teg {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $mono-white;
+  cursor: pointer;
+  width: 60px;
+  height: 36px;
+  border-radius: 50px;
+  background-color: $main-blue-900;
+
+  .ui_close {
+    font-size: 8px;
+  }
+
+  &--md {
+    height: 28px;
+  }
+
+  &--sm {
+    width: 44px;
+    height: 25px;
+  }
+
+  &--xs {
+    width: 36px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &--transparent {
+    background-color: $mono-bg-grey;
+    color: $main-blue-900;
+  }
+
+  &--close--btn {
+    width: 80px;
+    height: 36px;
+
+    &--md {
+      height: 28px;
+    }
+
+    &--sm {
+      width: 64px;
+      height: 24px;
+    }
+
+    &--xs {
+      width: 56px;
+      height: 20px;
+    }
+  }
+
+}
+
+/*========================Стили для Оповещений==========================*/
+
+.notification {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  color: $mono-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 17px;
+  cursor: pointer;
+  height: 17px;
+  border-radius: 100px;
+  background-color: $main-red-900;
+
+  &--md {
+    width: 23px;
+  }
+
+  &--lg {
+    width: 29px;
+  }
+
+
+}
+
+.discount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 43px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 16px;
+  background-color: $main-red-900;
+  color: $mono-white;
+  border-radius: 4px;
+
+}
+
+.progress--rate {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  color: $mono-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: $help-peach;
+
+  &--sm {
+    height: 18px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  &--up {
+    background-color: $main-green-800;
+
+  }
+
+  &--high {
+    background-color: $main-green-900;
+
+  }
+
+}
+
+/*=================Стили для Табов Заказа========================*/
+.tabs {
+  padding: 0;
+  display: flex;
+
+  &__item {
+    margin: 0 8px;
+
+  }
+
+  &__button {
+    font-size: 14px;
+    font-weight: 500;
+    width: 133px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: $main-blue-400;
+    //border-color: $main-blue-900;
+    line-height: 20px;
+    color: $main-blue-900;
+    transition: 0.7s ease;
+    border: 0;
+    outline: none;
+
+    &--sm {
+      width: 125px;
+      height: 28px;
+
+    }
+
+    &--underline {
+      border: none;
+      border-bottom: 2px solid $main-blue-900;
+      outline: none;
+      background-color: $mono-white;
+      color: $main-blue-900;
+      padding: 8px 0;
+
+      &:disabled,
+      &:disabled:hover {
+        background-color: initial;
+        color: $mono-dark-black;
+        border: 0;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: initial;
+        color: $mono-dark-black;
+        border: none;
+        border-bottom: 2px solid $main-blue-600;
+      }
+
+      &:active {
+        background-color: initial;
+        color: $mono-dark-black;
+        border: none;
+        border-bottom: 2px solid $main-blue-400;
+      }
+
+
+    }
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: initial;
+      color: $mono-dark-black;
+      border: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $main-blue-300;
+      color: $mono-dark-black;
+    }
+
+    &:active {
+      background-color: $main-blue-400;
+      color: $mono-dark-black;
+      border: 2px solid $main-blue-600;
+    }
+
+
+  }
+
+
+}
+
+
+/*========================Стили для Инпутов==========================*/
+
+
+/*===============Стили для Инпутов с Поиском================*/
+.search--input {
+  display: flex;
+  align-items: center;
+  width: 607px;
+  height: 44px;
+  background-color: $mono-bg-grey;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $mono-light-grey2;
+  }
+
+  .select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12px 16px;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 20px;
+      border-right: 2px solid $mono-light-grey1;
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-right: 6px;
+        color: $mono-dark-black;
+
+      }
+
+      .ui_flat-arrowDown {
+        font-size: 8px;
+        transition-duration: 0.5s;
+        color: $mono-dark-black;
+        //transform: rotate(180deg);
+      }
+
+    }
+
+    &.active .select__header span {
+      color: $main-blue-900;
+    }
+
+    &.active .ui_flat-arrowDown {
+      color: $main-blue-900;
+      transform: rotate(180deg);
+    }
+
+    &.active .select__content {
+      display: block;
+    }
+
+
+    &__content {
+      display: none;
+      position: absolute;
+      top: 44px;
+      left: 0;
+      transition: 0.5s ease-in-out;
+    }
+  }
+
+  .input-wrapper {
+    height: 100%;
+    width: calc(100% - 170px);
+    margin-left: 126px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+
+    .input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      background-color: $mono-bg-grey;
+      color: $mono-dark-black;
+
+      &::placeholder {
+        color: $mono-grey;
+      }
+
+    }
+
+
+  }
+
+  .search--input__button {
+    position: absolute;
+    right: 0;
+    border-radius: 100px;
+    background-color: $mono-light-grey2;
+    top: 0;
+    border-color: $mono-light-grey2;
+    color: $mono-grey;
+  }
+
+  .blue {
+    background-color: $main-blue-900;
+    color: $mono-white;
+  }
+}
+
+
+/*===============Стили для Инпутов с Radio и Checkbox================*/
+
+.dropdown,
+.dropdown2,
+.dropdown3,
+.dropdownSm {
+  width: 250px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid $mono-light-grey2;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+
+  &--sm {
+    width: 122px;
+    height: 40px;
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid $main-blue-900;
+  }
+
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: $mono-grey;
+
+      .ui_listMenu {
+        margin-right: 6px;
+      }
+    }
+
+    .ui_flat-arrowDown {
+      font-size: 8px;
+      transition-duration: 0.5s;
+      color: $mono-grey;
+      position: absolute;
+      right: 16px;
+
+
+    }
+
+  }
+
+  &.active2 .ui_flat-arrowDown {
+    transform: rotate(180deg);
+  }
+
+  &.active2 .dropdown--radio,
+  &.active2 .dropdown--checkbox,
+  &.active2 .dropdown--standard {
+    display: block;
+  }
+
+
+  &.active2 span,
+  &.active2 .ui_flat-arrowDown {
+    color: $main-blue-900;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  &--radio,
+  &--checkbox,
+  &--standard {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    display: none;
+    width: 100%;
+  }
+
+
+}
+
+
+/*=====================Инпуты с разными состояниями =====================*/
+
+label {
+  position: relative;
+  z-index: 1;
+
+  .input {
+    width: 335px;
+    height: 44px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: $mono-bg-grey;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $mono-dark-grey;
+    padding: 12px 16px;
+    transition: 0.4s ease-in-out;
+
+    &--md {
+      height: 40px;
+    }
+
+    &--sm {
+      height: 32px;
+    }
+
+
+    &--xs {
+      height: 32px;
+      width: 200px;
+
+      &:focus + .ui_tick {
+        background-color: $main-blue-900;
+      }
+    }
+
+
+    &--transparent {
+      /*Стили при неправильном вводе данных*/
+
+      &:invalid {
+        border: 1px solid $main-red-900;
+        color: $main-red-900;
+        background-color: transparent;
+
+      }
+    }
+
+
+    &::placeholder {
+      color: $mono-grey;
+    }
+
+    &:hover {
+      border: 1px solid $main-blue-900;
+      box-shadow: 0 0 15px rgba(27, 118, 255, 0.2);
+    }
+
+    &:focus {
+      box-shadow: initial;
+      border: 1px solid transparent;
+    }
+
+    //&:focus + .ui_close {
+    //  display: block;
+    //}
+
+    /*Стили при правильном вводе данных*/
+
+    //&:valid,
+    &:invalid {
+      box-shadow: initial;
+      border: 1px solid transparent;
+    }
+
+    /*Стили при неправильном вводе данных*/
+
+    &:invalid {
+      background-color: $main-red-900;
+      color: $main-red-400;
+
+    }
+
+    //&:valid {
+    //  background-color: $main-green-400;
+    //}
+
+
+  }
+
+  .ui_tick {
+    position: absolute;
+    right: 1px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $mono-white;
+    font-size: 11px;
+    height: calc(100% - 2px);
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: $mono-light-grey2;
+  }
+
+  .ui_close {
+    position: absolute;
+    right: 16px;
+    z-index: 8;
+    cursor: pointer;
+    display: none;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $mono-grey;
+    font-size: 11px;
+  }
+
+  .block {
+    display: block;
+  }
+}
+
+
+
+
