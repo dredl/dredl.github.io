@@ -2,12 +2,14 @@ const select = document.querySelector('.select')
 const dropdown = document.querySelector('.dropdown')
 const dropdown2 = document.querySelector('.dropdown2')
 const dropdown3 = document.querySelector('.dropdown3')
+const cardDropdown = document.querySelector('.card--dropdown')
 const dropdownSm = document.querySelector('.dropdown--sm')
 const dropdownIconMenu = document.querySelector('.dropdown--icon-menu')
 const selectText = document.getElementById('selectText')
 const selectText2 = document.getElementById('selectText2')
 const selectText3 = document.getElementById('selectText3')
 const selectNumber = document.getElementById('selectNumber')
+const selectNumber2 = document.getElementById('selectNumber2')
 const selectTextMenu = document.getElementById('selectTextMenu')
 const options = document.getElementsByClassName('options')
 const searchInput = document.querySelector('.input-wrapper .input')
@@ -16,14 +18,31 @@ const options2 = document.getElementsByClassName('options2')
 const options3 = document.getElementsByClassName('options3')
 const options4 = document.getElementsByClassName('options4')
 const options5 = document.getElementsByClassName('options5')
+const options6 = document.getElementsByClassName('options6')
 const closeIcon = document.querySelectorAll('.ui_close')
 const input = document.querySelectorAll('.input')
 const inputs = document.querySelectorAll('.text-field')
+const checkboxIndeterminate = document.querySelector('.input--checkbox--indeterminate')
+const addButton = document.querySelectorAll('.button--add')
 
-console.log(searchInput)
+
+addButton.forEach(el => {
+  el.addEventListener('click', function () {
+    if (!el.classList.contains('added')) {
+      el.classList.add('added')
+      el.innerHTML = 'Добавлено'
+    } else {
+      el.classList.remove('added')
+      el.innerHTML = 'Добавить'
+    }
+  })
+})
+
+
+checkboxIndeterminate.indeterminate = true
 
 searchInput.addEventListener('input', function () {
-  if(searchInput.value.length > 0) {
+  if (searchInput.value.length > 0) {
     searchInputButton.classList.add('blue')
   } else {
     searchInputButton.classList.remove('blue')
@@ -46,6 +65,12 @@ dropdown2.onclick = function () {
 dropdown3.onclick = function () {
   dropdown3.classList.toggle('active2')
 }
+
+cardDropdown.onclick = function () {
+  cardDropdown.classList.toggle('active2')
+}
+
+
 
 dropdownSm.onclick = function () {
   dropdownSm.classList.toggle('active2')
@@ -121,4 +146,11 @@ for (option5 of options5) {
   }
 }
 
+for (option6 of options6) {
+  option6.onclick = function (e) {
+    e.stopPropagation();
+    selectNumber2.innerHTML = this.textContent
+    cardDropdown.classList.remove('active2')
+  }
+}
 

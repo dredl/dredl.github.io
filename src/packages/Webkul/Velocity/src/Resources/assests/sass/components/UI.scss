@@ -169,6 +169,42 @@
 
   }
 
+  &--icon-left {
+    .ui_search {
+      margin-right: 10.5px;
+    }
+  }
+
+  &--icon-right {
+    .ui_search {
+      margin-left: 10.5px;
+    }
+  }
+
+  &--add {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    color: $mono-black;
+    width: 122px;
+    height: 42px;
+    border-radius: 8px;
+    background-color: initial;
+    border: 1px solid $mono-black;
+
+    &:hover,
+    &:focus {
+      background-color: initial !important;
+      border: 1px solid $mono-black !important;
+    }
+
+    &:active {
+      background-color: initial !important;
+      border: 1px solid $mono-black !important;
+    }
+  }
+
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,6 +289,27 @@
 
   .small {
     font-size: 12px;
+  }
+}
+
+.added {
+  background-color: $mono-light-grey1 !important;
+  color: $mono-white;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $mono-light-grey1 !important;
+    color: $mono-white;
+    border: none !important;
+  }
+
+  &:active {
+    background-color: $mono-light-grey1 !important;
+    color: $mono-white;
+    border: none !important;
   }
 }
 
@@ -380,7 +437,6 @@
         transform: translateY(-50%);
         right: 16px;
         z-index: 2;
-
       }
 
       .checkbox--input:checked + .checkbox--label .ui_tick {
@@ -535,7 +591,7 @@
   line-height: 22px;
   color: $mono-white;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 48px;
   height: 24px;
@@ -543,10 +599,22 @@
   border-radius: 100px;
   background-color: $help-peach;
 
+  .ui_arrowDown,
+  .ui_arrowUp {
+    font-size: 8px;
+
+  }
+
   &--sm {
     height: 18px;
     font-size: 12px;
     line-height: 14px;
+
+    .ui_arrowDown,
+    .ui_arrowUp {
+      font-size: 8px;
+
+    }
   }
 
   &--up {
@@ -860,9 +928,39 @@
 
 /*=====================Инпуты с разными состояниями =====================*/
 
+.label--text {
+  position: relative;
+
+}
+
+.label--text:before {
+  content: 'Title';
+  position: absolute;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: $mono-grey;
+  top: -20px;
+  left: 0;
+}
+
 label {
   position: relative;
   z-index: 1;
+
+  .moving--text {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $mono-grey;
+    transition: 0.4s;
+  }
+
 
   .input {
     width: 335px;
@@ -877,6 +975,21 @@ label {
     color: $mono-dark-grey;
     padding: 12px 16px;
     transition: 0.4s ease-in-out;
+
+    &--xxl {
+      height: 56px;
+      border-radius: 12px;
+
+      &:focus + .moving--text {
+        transform: translateY(-22px);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+
+      }
+
+    }
+
 
     &--md {
       height: 40px;
@@ -899,6 +1012,13 @@ label {
 
     &--transparent {
       /*Стили при неправильном вводе данных*/
+      background-color: initial;
+      border: 1px solid $mono-grey;
+      color: $mono-grey;
+
+      &:focus {
+        border: 1px solid $mono-grey !important;
+      }
 
       &:invalid {
         border: 1px solid $main-red-900;
@@ -938,8 +1058,8 @@ label {
     /*Стили при неправильном вводе данных*/
 
     &:invalid {
-      background-color: $main-red-900;
-      color: $main-red-400;
+      background-color: $main-red-400;
+      color: $main-red-900;
 
     }
 
@@ -984,6 +1104,422 @@ label {
   }
 }
 
+
+/*====================Чекбоксы Радиобутоны Свитчеры с разными состояниями =====================*/
+
+.checkbox-wrapper {
+  input:not(:last-child) {
+    margin-right: 24px;
+
+  }
+}
+
+.input--checkbox {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid $mono-grey;
+
+  &:disabled,
+  &:disabled:hover {
+    background-color: initial;
+    color: $mono-dark-black;
+    border: 0;
+  }
+
+  &:disabled:checked {
+    background-color: $main-blue-600;
+  }
+
+  &:hover,
+  &:focus {
+    border: 2px solid $main-blue-700 !important;
+  }
+
+  &:active {
+    background-color: $main-blue-400;
+    color: $mono-dark-black;
+    border: 2px solid $main-blue-600;
+  }
+
+
+}
+
+.switcher-wrapper {
+  .switcher:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+}
+
+.switcher {
+  position: relative;
+  width: 46px;
+  height: 24px;
+  background-color: $mono-white;
+  border: 1px solid $mono-light-grey2;
+  border-radius: 100px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: .5s;
+}
+
+.switcher:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2px;
+  background-color: $mono-grey;
+  transition: .5s;
+}
+
+.switcher:disabled:before {
+  box-shadow: 0 5px 6px -2px rgba(72, 167, 255, 0.2);
+  background-color: $mono-light-grey2;
+}
+
+.switcher:checked:before {
+  left: 22px;
+  box-shadow: 0 5px 6px -2px rgba(72, 167, 255, 0.2);
+  background-color: $main-blue-900;
+}
+
+.switcher:checked:disabled:before {
+  background-color: $main-blue-600;
+  box-shadow: 0 5px 6px -2px rgba(72, 167, 255, 0.2);
+}
+
+
+.text-checkbox--wrapper {
+  display: flex;
+  align-items: center;
+
+  .text-checkbox,
+  .text-radio {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  label {
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    color: $mono-dark-black;
+    cursor: pointer;
+
+    &:hover {
+      color: $main-blue-700;
+    }
+
+  }
+}
+
+
+/*====================СТИЛИ ДЛЯ КАРТОЧЕК ТОВАРОВ =====================*/
+/*Обычная Карточка*/
+.card {
+  width: 252px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  &__image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &--teg {
+      font-size: 12px;
+      line-height: 14px;
+      width: 64px;
+      margin-bottom: 6px;
+      height: 18px;
+      color: $mono-white;
+      background-color: $main-blue-900;
+
+    }
+
+    .review {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      color: $mono-dark-black;
+      margin-bottom: 4px;
+
+      .ui_star {
+        font-size: 14px;
+        color: $help-yellow;
+      }
+
+      div:last-child {
+        margin-left: 5px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 22px;
+
+      }
+    }
+
+
+    .product--name {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 22px;
+      color: $mono-dark-black;
+      margin-bottom: 12px;
+
+    }
+
+    &--progress--rate {
+      display: flex;
+      align-items: center;
+      margin-bottom: 7px;
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-left: 8px;
+        color: $mono-black;
+      }
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+
+      .ui_location {
+        color: $mono-grey;
+        font-size: 12px;
+
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 14px;
+        color: $mono-grey;
+
+      }
+    }
+
+    .chatting {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .ui_message-circle {
+        font-size: 12px;
+        color: $mono-black;
+      }
+
+      p:last-child {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        margin-left: 5px;
+        color: $mono-black;
+      }
+    }
+
+    .price {
+
+      &--info {
+        margin-bottom: 19px;
+
+      }
+
+      &--previous {
+        text-decoration: line-through;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: $mono-grey;
+
+      }
+
+      &--discount {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+        color: $mono-black;
+        margin-bottom: 5px;
+
+        div {
+          margin-left: 8px;
+        }
+
+        .price--per--item {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 14px;
+          color: $mono-grey;
+        }
+
+
+      }
+
+    }
+  }
+
+  &--actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+}
+
+/*Карточка с надписбю Новинка*/
+
+.card-new {
+  width: 206px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px;
+  //border: 1px solid red;
+  position: relative;
+  transition: 0.4s ease;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  }
+
+
+  .new-label {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: $mono-white;
+    text-transform: uppercase;
+    width: 73px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    background-color: $main-blue-900;
+    border-radius: 50px;
+    align-items: center;
+    cursor: pointer;
+
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 14px;
+      color: $mono-dark-black;
+      overflow: hidden;
+      white-space: pre-line;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      margin-top: 8px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      color: $mono-dark-black;
+      margin-bottom: 16px;
+    }
+
+    .description {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 14px;
+      color: $mono-grey;
+      overflow: hidden;
+      white-space: pre-line;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      margin-top: 16px;
+
+    }
+
+  }
+
+  &__actions {
+    margin-top: 8px;
+
+    button {
+      width: 100%;
+    }
+
+  }
+}
+
+/*==================================Стили Для Заказов=================================*/
+
+.orders {
+  display: flex;
+  padding: 8px 16px;
+  border: 1px solid $mono-light-grey1;
+  border-radius: 16px;
+  cursor: pointer;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 46px;
+
+    .title {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 14px;
+      color: $mono-grey;
+      margin-bottom: 2px;
+
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      color: $mono-dark-black;
+    }
+  }
+}
 
 
 
