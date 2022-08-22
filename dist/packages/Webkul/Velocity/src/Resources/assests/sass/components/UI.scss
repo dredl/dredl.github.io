@@ -265,24 +265,26 @@
     background-color: transparent;
     border: initial;
     color: $main-blue-900;
+    height: 40px;
 
     &:disabled,
     &:disabled:hover {
       background-color: initial;
       border-color: initial;
-      color: $mono-grey;
+      color: $mono-light-grey1;
     }
 
     &:hover,
     &:focus {
-      background-color: initial;
-      color: $main-blue-800;
+      background-color: $main-blue-300;
+      //color: $main-blue-800;
+
     }
 
     &:active {
-      background-color: initial;
+      background-color: $main-blue-400;
       border-color: $main-blue-600;
-      color: $main-blue-600;
+      //color: $main-blue-600;
     }
   }
 
@@ -328,9 +330,18 @@
   }
 
   &:active {
-    color: $main-blue-900;
+    color: $main-blue-700;
   }
 
+  .ui_location {
+    margin-right: 6px;
+  }
+
+  .ui_flat-arrowDown {
+    color: $mono-grey;
+    font-size: 7px;
+    margin-left: 7px;
+  }
 }
 
 .delivery {
@@ -361,7 +372,7 @@
   }
 
   &:active {
-    color: $main-blue-900;
+    color: $main-blue-700;
   }
 
 }
@@ -378,6 +389,22 @@
     background: #FFFFFF;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $mono-light-grey1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $mono-dark-grey;
+      border-radius: 10px;
+
+    }
+
 
     &--sm {
       height: 180px;
@@ -599,10 +626,9 @@
   border-radius: 100px;
   background-color: $help-peach;
 
-  .ui_arrowDown,
-  .ui_arrowUp {
-    font-size: 8px;
-
+  .ui_arrowDown-green,
+  .ui_arrowUp-green {
+    font-size: 9px;
   }
 
   &--sm {
@@ -610,9 +636,9 @@
     font-size: 12px;
     line-height: 14px;
 
-    .ui_arrowDown,
-    .ui_arrowUp {
-      font-size: 8px;
+    .ui_arrowDown-green,
+    .ui_arrowUp-green {
+      font-size: 9px;
 
     }
   }
@@ -1314,6 +1340,11 @@ label {
 
       }
 
+      .ui_down-arrow {
+        font-size: 7px;
+        color: $mono-grey;
+      }
+
       p {
         font-size: 12px;
         font-weight: 700;
@@ -1520,6 +1551,430 @@ label {
     }
   }
 }
+
+/*==================================Стили Для Предумпреждения=================================*/
+
+.red--warning-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.red--warning-wrapper div:not(:last-child),
+.blue--warning-wrapper div:not(:last-child) {
+  margin-bottom: 24px;
+
+
+}
+
+.warning {
+  color: $main-red-900;
+  display: flex;
+  cursor: pointer;
+  padding: 17px;
+  background-color: $mono-white;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+
+
+  .icon {
+    .ui_warning {
+      margin-right: 9px;
+      font-size: 22px;
+    }
+  }
+
+  .text {
+    max-width: 480px;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: $mono-dark-grey;
+    }
+  }
+}
+
+.blue--warning {
+  color: $main-blue-900;
+}
+
+.arrows-wrapper .percentage:not(:last-child) {
+  margin-right: 40px;
+
+}
+
+/*==================================Стили Для Стрелок с Приростом=================================*/
+
+
+.state-up-wrapper {
+  display: flex;
+  align-items: center;
+
+  .percentage {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 14px;
+      color: $main-green-900;
+      margin-right: 5px;
+    }
+  }
+
+  .state-up {
+    color: $main-green-900;
+
+    .ui_arrowDown-green {
+      width: 10px;
+    }
+
+    &--red {
+      color: $main-red-900;
+    }
+
+    &--x1 {
+      position: relative;
+
+      .ui_state-up {
+        position: absolute;
+        top: -3px;
+        left: 0;
+      }
+    }
+
+    &--x2 {
+      position: relative;
+
+      .ui_state-up {
+        position: absolute;
+        top: -3px;
+        left: 0;
+      }
+
+      .ui_state-up:last-child {
+        position: absolute;
+        top: -9px;
+        left: 0;
+      }
+    }
+  }
+
+}
+
+
+.state-down-wrapper {
+  display: flex;
+  align-items: center;
+
+  .percentage {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 14px;
+      color: $main-red-900;
+      margin-right: 5px;
+    }
+  }
+
+  .state-down {
+
+    color: $main-green-900;
+
+    .ui_arrowUp-green {
+      width: 10px;
+    }
+
+    &--red {
+      color: $main-red-900;
+    }
+
+    &--x1 {
+      position: relative;
+
+      .ui_state-down {
+        position: absolute;
+        top: 7px;
+        left: 0;
+      }
+    }
+
+    &--x2 {
+      position: relative;
+
+      .ui_state-down {
+        position: absolute;
+        top: 9px;
+        left: 0;
+      }
+
+      .ui_state-down:last-child {
+        position: absolute;
+        top: 15px;
+        left: 0;
+      }
+    }
+  }
+
+
+}
+
+.state-up--grey,
+.state-down--grey {
+  color: $mono-grey !important;
+}
+
+.percentage--grey {
+  span {
+    color: $mono-grey !important;
+  }
+}
+
+
+/*==================================Стили Для Шкалы=================================*/
+
+.range-container {
+  width: 238px;
+  position: relative;
+
+  .range {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 2px;
+    background-color: $main-blue-400;
+    outline: none;
+    border: none;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background-color: $main-blue-900;
+      cursor: pointer;
+      position: relative;
+      z-index: 3;
+    }
+  }
+
+
+  #selector {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    .selectBtn {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      background-image: url("/src/img/right-arrow.svg");
+      background-size: cover;
+      background-position: center;
+      top: 0;
+    }
+  }
+
+  #progress-bar {
+    width: 50%;
+    height: 2px;
+    background-color: $main-blue-900;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+}
+
+
+/*===============================Кнопки, переключатели====================================*/
+
+.date {
+  display: flex;
+  align-items: center;
+
+  .day,
+  .month {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    color: $main-blue-900;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: $main-blue-400;
+
+    &--borderless {
+      background-color: initial;
+      color: $mono-dark-grey;
+    }
+
+  }
+}
+
+//Кнопки, с ракетой
+
+.like-button {
+  outline: none;
+  border: 1px solid $mono-light-grey1;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 89px;
+  height: 38px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: $mono-dark-black;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $main-blue-900;
+    color: $mono-white;
+
+  }
+
+  &:hover .ui_rocket {
+    color: $mono-white;
+  }
+
+  span:first-child {
+    .ui_rocket {
+      font-size: 21.5px;
+
+    }
+  }
+
+  span:last-child {
+    margin-left: 7px;
+  }
+}
+
+
+//Кнопки, с иконкой добавления и закрытия
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-blue-900;
+  border-color: $main-blue-900;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  color: $mono-white;
+
+  .ui_plus,
+  .ui_close {
+    font-size: 13.33px;
+
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $main-blue-700;
+    border-color: $main-blue-700;
+    color: $mono-white;
+  }
+
+  &:active {
+    background-color: $main-blue-600;
+    border-color: $main-blue-600;
+    color: $mono-white;
+  }
+
+  &--close {
+    background-color: initial;
+    border: 1px solid transparent;
+    color: $main-blue-900;
+
+    &:hover,
+    &:focus {
+      background-color: $main-blue-400;
+      border-color: $main-blue-400;
+      color: $main-blue-900;
+    }
+
+    &:active {
+      background-color: $main-blue-500;
+      border-color: $main-blue-500;
+      color: $main-blue-900;
+    }
+
+  }
+
+
+}
+
+//Стили для картинок с сухим деревом
+.image-wrapper {
+  position: relative;
+}
+
+.dry-tree--image {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+
+  &:before {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-radius: 12px;
+    z-index: 3;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover:before {
+    opacity: 1;
+  }
+
+}
+
+.dry-tree--text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

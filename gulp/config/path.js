@@ -22,7 +22,8 @@ export const path = {
     scss: `${srcFolder}/packages/Webkul/Velocity/src/Resources/assests/sass/components/UI.scss`,
     files: `${srcFolder}/packages/**/*.*`,
     img: `${srcFolder}/img/**/*.{png,jpeg,jpg,gif,webp}`,
-    js: `${srcFolder}/js/**/*.*`
+    js: `${srcFolder}/js/**/*.*`,
+    svg: `${srcFolder}/img/**/*.svg`
   },
   watch: {
     html: `${srcFolder}/**/*.html`,
