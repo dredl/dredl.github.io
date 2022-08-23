@@ -34,6 +34,9 @@
             list-style: none;
             padding: 0;
         }
+        .root .row {
+            margin-top: 16px;
+        }
     </style>
 </head>
 <body>
@@ -189,367 +192,475 @@
     </div>
 
 </div>
+<br>
 <!--Кнопки-->
-<div style='display: flex; flex-wrap: wrap; gap: 20px'>
-    <!--Кнопки с самым большим размером-->
-    <div style=" display: flex; flex-wrap: wrap; max-width: 600px; border: 2px dashed #5656FF; padding: 16px">
-        <!--Кнопки с фоном-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--xxl'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl" disabled>Button</button>
-
-        <!--Кнопки только с border-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--xxl button--transparent'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--transparent" disabled>Button</button>
-
-        <!--Кнопки  без фона-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--xxl button--borderless'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--borderless" disabled>Button</button>
-
-        <!--Кнопки с иконкой поиска слева-->
-
-        <!--это обычная кнопка-->
-        <button class='button button--xxl button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--icon-left" disabled><i class="ui_search"></i>Button</button>
-
-        <!--Кнопки только с border-->
-
-        <button class='button button--xxl button--transparent button--icon-left'><i class="ui_search"></i>Button
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--transparent button--icon-left" disabled><i class="ui_search"></i>Button
-        </button>
-
-
-        <!--Кнопки  без фона-->
-        <button class='button button--xxl button--borderless button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--borderless button--icon-left" disabled><i class="ui_search"></i>Button
-        </button>
-
-        <!--Кнопки  без фона  с маленькой иконкой поиска -->
-        <button class='button button--xxl button--borderless small-icon-search button--icon-left'><i
-                class="ui_search small"></i>Button
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--borderless small-icon-search button--icon-left" disabled>
-            <i class="ui_search small"></i>Button
-        </button>
-
-
-        <!--Кнопки с иконкой поиска справа-->
-
-        <!--это обычная кнопка-->
-        <button class='button button--xxl button--icon-right'>Button<i class="ui_search"></i></button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--icon-right" disabled>Button<i class="ui_search"></i></button>
-
-        <!--Кнопки только с border-->
-
-        <button class='button button--xxl button--transparent button--icon-right'>Button<i class="ui_search"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--transparent button--icon-right" disabled>Button<i
-                class="ui_search"></i></button>
-
-
-        <!--Кнопки  без фона-->
-        <button class='button button--xxl button--borderless button--icon-right'>Button<i class="ui_search"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--borderless button--icon-right" disabled>Button<i
-                class="ui_search"></i></button>
-
-        <!--Кнопки  без фона  с маленькой иконкой поиска -->
-        <button class='button button--xxl button--borderless small-icon-search button--icon-right'>
-            Button
-            <i class="ui_search small"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--xxl button--borderless small-icon-search button--icon-right" disabled>Button
-            <i class="ui_search small"></i></button>
-
-    </div>
-
-    <!--Кнопки с большим размером-->
-    <div style=" display: flex; flex-wrap: wrap; max-width: 600px; border: 2px dashed #5656FF; padding: 16px">
-        <!--Кнопки с фоном-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--xl'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl" disabled>Button</button>
-
-        <!--Кнопки только с border-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--xl button--transparent'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--transparent" disabled>Button</button>
-
-        <!--Кнопки  без фона-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--xl button--borderless'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--borderless" disabled>Button</button>
-
-        <!--Кнопки с иконкой поиска слева-->
-
-        <!--это обычная кнопка-->
-        <button class='button button--xl button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--icon-left" disabled><i class="ui_search"></i>Button</button>
-
-        <!--Кнопки только с border-->
-
-        <button class='button button--xl button--transparent button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--transparent button--icon-left" disabled><i class="ui_search"></i>Button
-        </button>
-
-
-        <!--Кнопки  без фона-->
-        <button class='button button--xl button--borderless button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--borderless button--icon-left" disabled><i class="ui_search"></i>Button
-        </button>
-
-        <!--Кнопки  без фона  с маленькой иконкой поиска -->
-        <button class='button button--xl button--borderless small-icon-search button--icon-left'>
-            <i class="ui_search small"></i>
-            Button
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--borderless small-icon-search button--icon-left" disabled>
-            <i class="ui_search small"></i>
-            Button
-        </button>
-
-
-        <!--Кнопки с иконкой поиска справа-->
-
-        <!--это обычная кнопка-->
-        <button class='button button--xl button--icon-right'>Button<i class="ui_search"></i></button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--icon-right" disabled>Button<i class="ui_search"></i></button>
-
-        <!--Кнопки только с border-->
-
-        <button class='button button--xl button--transparent button--icon-right'>
-            Button
-            <i class="ui_search"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--transparent button--icon-right" disabled>
-            Button
-            <i class="ui_search"></i>
-        </button>
-
-
-        <!--Кнопки  без фона-->
-        <button class='button button--xl button--borderless button--icon-right'>
-            Button
-            <i class="ui_search"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--borderless button--icon-right" disabled>
-            Button
-            <i class="ui_search"></i>
-        </button>
-
-        <!--Кнопки  без фона  с маленькой иконкой поиска -->
-        <button class='button button--xl button--borderless small-icon-search button--icon-right'>
-            Button
-            <i class="ui_search small"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--xl button--borderless small-icon-search button--icon-right" disabled>
-            Button
-            <i class="ui_search small"></i>
-        </button>
-
-    </div>
-
-    <!--Кнопки с размером больше среднего-->
-    <div style=" display: flex; flex-wrap: wrap; max-width: 300px; border: 2px dashed #5656FF; padding: 16px">
-        <!--Кнопки с фоном-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--sm'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--sm" disabled>Button</button>
-
-        <!--Кнопки только с border-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--sm button--transparent'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--sm button--transparent" disabled>Button</button>
-
-        <!--Кнопки  без фона-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--sm button--borderless'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--sm button--borderless" disabled>Button</button>
-
-        <!--Кнопки с иконкой поиска слева-->
-
-        <!--это обычная кнопка-->
-        <button class='button button--lg button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--lg button--icon-left" disabled><i class="ui_search"></i>Button</button>
-
-        <!--Кнопки только с border-->
-
-        <button class='button button--lg button--transparent button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--lg button--transparent button--icon-left" disabled><i class="ui_search"></i>Button
-        </button>
-
-
-        <!--Кнопки  без фона-->
-        <button class='button button--lg button--borderless button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--lg button--borderless button--icon-left" disabled><i class="ui_search"></i>Button
-        </button>
-
-        <!--Кнопки  без фона  с маленькой иконкой поиска -->
-        <button class='button button--lg button--borderless small-icon-search button--icon-left'><i
-                class="ui_search small"></i>Button
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--lg button--borderless small-icon-search button--icon-left" disabled><i
-                class="ui_search small"></i>Button
-        </button>
-
-
-        <!--Кнопки с иконкой поиска справа-->
-
-        <!--это обычная кнопка-->
-        <button class='button button--lg button--icon-right'>Button<i class="ui_search"></i></button>
-        <!--это disabled кнопка-->
-        <button class="button button--lg button--icon-right" disabled>Button<i class="ui_search"></i></button>
-
-        <!--Кнопки только с border-->
-
-        <button class='button button--lg button--transparent button--icon-right'>Button<i class="ui_search"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--lg button--transparent button--icon-right" disabled>Button<i
-                class="ui_search"></i></button>
-
-
-        <!--Кнопки  без фона-->
-        <button class='button button--lg button--borderless button--icon-right'>Button<i class="ui_search"></i></button>
-        <!--это disabled кнопка-->
-        <button class="button button--lg button--borderless button--icon-right" disabled>Button<i class="ui_search"></i>
-        </button>
-
-        <!--Кнопки  без фона  с маленькой иконкой поиска -->
-        <button class='button button--lg button--borderless small-icon-search button--icon-right'>Button<i
-                class="ui_search small"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--lg button--borderless small-icon-search button--icon-right" disabled>Button<i
-                class="ui_search small"></i></button>
-
-    </div>
-
-    <!--Кнопки с среднего размера-->
-    <div style=" display: flex; flex-wrap: wrap; max-width: 300px; border: 2px dashed #5656FF; padding: 16px">
-        <!--Кнопки с фоном-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--xs'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xs" disabled>Button</button>
-
-        <!--Кнопки только с border-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--xs button--transparent'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xs button--transparent" disabled>Button</button>
-
-        <!--Кнопки  без фона-->
-
-        <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
-        <button class='button button--xs button--borderless'>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--xs button--borderless" disabled>Button</button>
-
-        <!--Кнопки с иконкой поиска слева-->
-
-        <!--это обычная кнопка-->
-        <button class='button button--md button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--md button--icon-left" disabled><i class="ui_search"></i>Button</button>
-
-        <!--Кнопки только с border-->
-
-        <button class='button button--md button--transparent button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--md button--transparent button--icon-left" disabled><i class="ui_search"></i>Button
-        </button>
-
-
-        <!--Кнопки  без фона-->
-        <button class='button button--md button--borderless button--icon-left'><i class="ui_search"></i>Button</button>
-        <!--это disabled кнопка-->
-        <button class="button button--md button--borderless button--icon-left" disabled><i class="ui_search"></i>Button
-        </button>
-
-        <!--Кнопки  без фона  с маленькой иконкой поиска -->
-        <button class='button button--md button--borderless small-icon-search button--icon-left'><i
-                class="ui_search small"></i>Button
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--md button--borderless small-icon-search button--icon-left" disabled><i
-                class="ui_search small"></i>Button
-        </button>
-
-
-        <!--Кнопки с иконкой поиска справа-->
-
-        <!--это обычная кнопка-->
-        <button class='button button--md button--icon-right'>Button<i class="ui_search"></i></button>
-        <!--это disabled кнопка-->
-        <button class="button button--md button--icon-right" disabled>Button<i class="ui_search"></i></button>
-
-        <!--Кнопки только с border-->
-
-        <button class='button button--md button--transparent button--icon-right'>Button<i class="ui_search"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--md button--transparent button--icon-right" disabled>Button<i
-                class="ui_search"></i></button>
-
-
-        <!--Кнопки  без фона-->
-        <button class='button button--md button--borderless button--icon-right'>Button<i class="ui_search"></i></button>
-        <!--это disabled кнопка-->
-        <button class="button button--md button--borderless button--icon-right" disabled>Button<i class="ui_search"></i>
-        </button>
-
-        <!--Кнопки  без фона  с маленькой иконкой поиска -->
-        <button class='button button--md button--borderless small-icon-search button--icon-right'>Button<i
-                class="ui_search small"></i>
-        </button>
-        <!--это disabled кнопка-->
-        <button class="button button--md button--borderless small-icon-search button--icon-right" disabled>Button<i
-                class="ui_search small"></i></button>
-
+<div style='display: flex; flex-wrap: wrap; gap: 20px' class="root">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!--Кнопки с самым большим размером-->
+                <div style=" display: flex; flex-wrap: wrap; border: 2px dashed #5656FF; padding: 16px">
+                    <!--Кнопки с фоном-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                                <button class='button button--xxl'>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl" disabled>Button</button>
+                            </div>
+                        </div>
+                        <!--Кнопки только с border-->
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                                <button class='button button--xxl button--transparent'>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--transparent" disabled>Button</button>
+                            </div>
+                        </div>
+                        <!--Кнопки  без фона-->
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                                <button class='button button--xxl button--borderless'>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--borderless" disabled>Button</button>
+                            </div>
+                        </div>
+                        <!--Кнопки с иконкой поиска слева-->
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка-->
+                                <button class='button button--xxl button--icon-left'><i class="ui_search"></i>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--icon-left" disabled><i class="ui_search"></i>Button</button>
+                            </div>
+                        </div>
+                        <!--Кнопки только с border-->
+                        <div class="row">
+                            <div class="col">
+                                <button class='button button--xxl button--transparent button--icon-left'><i class="ui_search"></i>Button
+                                </button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--transparent button--icon-left" disabled><i class="ui_search"></i>Button
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--Кнопки  без фона-->
+                                <button class='button button--xxl button--borderless button--icon-left'><i class="ui_search"></i>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--borderless button--icon-left" disabled><i class="ui_search"></i>Button
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--Кнопки  без фона  с маленькой иконкой поиска -->
+                                <button class='button button--xxl button--borderless small-icon-search button--icon-left'><i
+                                        class="ui_search small"></i>Button
+                                </button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--borderless small-icon-search button--icon-left" disabled>
+                                    <i class="ui_search small"></i>Button
+                                </button>
+                            </div>
+                        </div>
+                        <!--Кнопки с иконкой поиска справа-->
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка-->
+                                <button class='button button--xxl button--icon-right'>Button<i class="ui_search"></i></button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--icon-right" disabled>Button<i class="ui_search"></i></button>
+                            </div>
+                        </div>
+                        <!--Кнопки только с border-->
+                        <div class="row">
+                            <div class="col">
+                                <button class='button button--xxl button--transparent button--icon-right'>Button<i class="ui_search"></i>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--transparent button--icon-right" disabled>Button<i
+                                        class="ui_search"></i></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--Кнопки  без фона-->
+                                <button class='button button--xxl button--borderless button--icon-right'>Button<i class="ui_search"></i>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--borderless button--icon-right" disabled>Button<i
+                                        class="ui_search"></i></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--Кнопки  без фона  с маленькой иконкой поиска -->
+                                <button class='button button--xxl button--borderless small-icon-search button--icon-right'>
+                                    Button
+                                    <i class="ui_search small"></i>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xxl button--borderless small-icon-search button--icon-right" disabled>Button
+                                    <i class="ui_search small"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <!--Кнопки с большим размером-->
+                <div style=" display: flex; flex-wrap: wrap; border: 2px dashed #5656FF; padding: 16px">
+                    <div class="container">
+                        <!--Кнопки с фоном-->
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                                <button class='button button--xl'>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl" disabled>Button</button>
+                            </div>
+                        </div>
+                        <!--Кнопки только с border-->
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                                <button class='button button--xl button--transparent'>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--transparent" disabled>Button</button>
+                            </div>
+                        </div>
+                        <!--Кнопки  без фона-->
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                                <button class='button button--xl button--borderless'>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--borderless" disabled>Button</button>
+                            </div>
+                        </div>
+                        <!--Кнопки с иконкой поиска слева-->
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка-->
+                                <button class='button button--xl button--icon-left'><i class="ui_search"></i>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--icon-left" disabled><i class="ui_search"></i>Button</button>
+                            </div>
+                        </div>
+                        <!--Кнопки только с border-->
+                        <div class="row">
+                            <div class="col">
+                                <button class='button button--xl button--transparent button--icon-left'><i class="ui_search"></i>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--transparent button--icon-left" disabled><i class="ui_search"></i>Button
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--Кнопки  без фона-->
+                                <button class='button button--xl button--borderless button--icon-left'><i class="ui_search"></i>Button</button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--borderless button--icon-left" disabled><i class="ui_search"></i>Button
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--Кнопки  без фона  с маленькой иконкой поиска -->
+                                <button class='button button--xl button--borderless small-icon-search button--icon-left'>
+                                    <i class="ui_search small"></i>
+                                    Button
+                                </button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--borderless small-icon-search button--icon-left" disabled>
+                                    <i class="ui_search small"></i>
+                                    Button
+                                </button>
+                            </div>
+                        </div>
+                        <!--Кнопки с иконкой поиска справа-->
+                        <div class="row">
+                            <div class="col">
+                                <!--это обычная кнопка-->
+                                <button class='button button--xl button--icon-right'>Button<i class="ui_search"></i></button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--icon-right" disabled>Button<i class="ui_search"></i></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--Кнопки только с border-->
+
+                                <button class='button button--xl button--transparent button--icon-right'>
+                                    Button
+                                    <i class="ui_search"></i>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--transparent button--icon-right" disabled>
+                                    Button
+                                    <i class="ui_search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--Кнопки  без фона-->
+                                <button class='button button--xl button--borderless button--icon-right'>
+                                    Button
+                                    <i class="ui_search"></i>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--borderless button--icon-right" disabled>
+                                    Button
+                                    <i class="ui_search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!--Кнопки  без фона  с маленькой иконкой поиска -->
+                                <button class='button button--xl button--borderless small-icon-search button--icon-right'>
+                                    Button
+                                    <i class="ui_search small"></i>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <!--это disabled кнопка-->
+                                <button class="button button--xl button--borderless small-icon-search button--icon-right" disabled>
+                                    Button
+                                    <i class="ui_search small"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <!--Кнопки с размером больше среднего-->
+                <div style=" display: flex; flex-wrap: wrap;  border: 2px dashed #5656FF; padding: 16px">
+                    <!--Кнопки с фоном-->
+
+                    <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                    <button class='button button--sm'>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--sm" disabled>Button</button>
+
+                    <!--Кнопки только с border-->
+
+                    <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                    <button class='button button--sm button--transparent'>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--sm button--transparent" disabled>Button</button>
+
+                    <!--Кнопки  без фона-->
+
+                    <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                    <button class='button button--sm button--borderless'>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--sm button--borderless" disabled>Button</button>
+
+                    <!--Кнопки с иконкой поиска слева-->
+
+                    <!--это обычная кнопка-->
+                    <button class='button button--lg button--icon-left'><i class="ui_search"></i>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--lg button--icon-left" disabled><i class="ui_search"></i>Button</button>
+
+                    <!--Кнопки только с border-->
+
+                    <button class='button button--lg button--transparent button--icon-left'><i class="ui_search"></i>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--lg button--transparent button--icon-left" disabled><i class="ui_search"></i>Button
+                    </button>
+
+
+                    <!--Кнопки  без фона-->
+                    <button class='button button--lg button--borderless button--icon-left'><i class="ui_search"></i>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--lg button--borderless button--icon-left" disabled><i class="ui_search"></i>Button
+                    </button>
+
+                    <!--Кнопки  без фона  с маленькой иконкой поиска -->
+                    <button class='button button--lg button--borderless small-icon-search button--icon-left'><i
+                            class="ui_search small"></i>Button
+                    </button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--lg button--borderless small-icon-search button--icon-left" disabled><i
+                            class="ui_search small"></i>Button
+                    </button>
+
+
+                    <!--Кнопки с иконкой поиска справа-->
+
+                    <!--это обычная кнопка-->
+                    <button class='button button--lg button--icon-right'>Button<i class="ui_search"></i></button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--lg button--icon-right" disabled>Button<i class="ui_search"></i></button>
+
+                    <!--Кнопки только с border-->
+
+                    <button class='button button--lg button--transparent button--icon-right'>Button<i class="ui_search"></i>
+                    </button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--lg button--transparent button--icon-right" disabled>Button<i
+                            class="ui_search"></i></button>
+
+
+                    <!--Кнопки  без фона-->
+                    <button class='button button--lg button--borderless button--icon-right'>Button<i class="ui_search"></i></button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--lg button--borderless button--icon-right" disabled>Button<i class="ui_search"></i>
+                    </button>
+
+                    <!--Кнопки  без фона  с маленькой иконкой поиска -->
+                    <button class='button button--lg button--borderless small-icon-search button--icon-right'>Button<i
+                            class="ui_search small"></i>
+                    </button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--lg button--borderless small-icon-search button--icon-right" disabled>Button<i
+                            class="ui_search small"></i></button>
+
+                </div>
+            </div>
+            <div class="col">
+                <!--Кнопки с среднего размера-->
+                <div style=" display: flex; flex-wrap: wrap; border: 2px dashed #5656FF; padding: 16px">
+                    <!--Кнопки с фоном-->
+
+                    <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                    <button class='button button--xs'>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--xs" disabled>Button</button>
+
+                    <!--Кнопки только с border-->
+
+                    <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                    <button class='button button--xs button--transparent'>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--xs button--transparent" disabled>Button</button>
+
+                    <!--Кнопки  без фона-->
+
+                    <!--это обычная кнопка  и  hover кнопка и это нажатая кнопка-->
+                    <button class='button button--xs button--borderless'>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--xs button--borderless" disabled>Button</button>
+
+                    <!--Кнопки с иконкой поиска слева-->
+
+                    <!--это обычная кнопка-->
+                    <button class='button button--md button--icon-left'><i class="ui_search"></i>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--md button--icon-left" disabled><i class="ui_search"></i>Button</button>
+
+                    <!--Кнопки только с border-->
+
+                    <button class='button button--md button--transparent button--icon-left'><i class="ui_search"></i>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--md button--transparent button--icon-left" disabled><i class="ui_search"></i>Button
+                    </button>
+
+
+                    <!--Кнопки  без фона-->
+                    <button class='button button--md button--borderless button--icon-left'><i class="ui_search"></i>Button</button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--md button--borderless button--icon-left" disabled><i class="ui_search"></i>Button
+                    </button>
+
+                    <!--Кнопки  без фона  с маленькой иконкой поиска -->
+                    <button class='button button--md button--borderless small-icon-search button--icon-left'><i
+                            class="ui_search small"></i>Button
+                    </button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--md button--borderless small-icon-search button--icon-left" disabled><i
+                            class="ui_search small"></i>Button
+                    </button>
+
+
+                    <!--Кнопки с иконкой поиска справа-->
+
+                    <!--это обычная кнопка-->
+                    <button class='button button--md button--icon-right'>Button<i class="ui_search"></i></button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--md button--icon-right" disabled>Button<i class="ui_search"></i></button>
+
+                    <!--Кнопки только с border-->
+
+                    <button class='button button--md button--transparent button--icon-right'>Button<i class="ui_search"></i>
+                    </button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--md button--transparent button--icon-right" disabled>Button<i
+                            class="ui_search"></i></button>
+
+
+                    <!--Кнопки  без фона-->
+                    <button class='button button--md button--borderless button--icon-right'>Button<i class="ui_search"></i></button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--md button--borderless button--icon-right" disabled>Button<i class="ui_search"></i>
+                    </button>
+
+                    <!--Кнопки  без фона  с маленькой иконкой поиска -->
+                    <button class='button button--md button--borderless small-icon-search button--icon-right'>Button<i
+                            class="ui_search small"></i>
+                    </button>
+                    <!--это disabled кнопка-->
+                    <button class="button button--md button--borderless small-icon-search button--icon-right" disabled>Button<i
+                            class="ui_search small"></i></button>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
