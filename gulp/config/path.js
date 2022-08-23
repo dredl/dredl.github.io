@@ -17,7 +17,7 @@ export const path = {
 
   },
   src: {
-    html: `${srcFolder}/*.html`,
+    html: `${srcFolder}/**/*.html`,
     fonts: `${srcFolder}/fonts/**/*.*`,
     scss: `${srcFolder}/packages/Webkul/Velocity/src/Resources/assests/sass/components/UI.scss`,
     files: `${srcFolder}/packages/**/*.*`,
