@@ -1784,6 +1784,8 @@ button[disabled] {
 
 /*==================Это стили для кнопок==================*/
 .button {
+  width: 100%;
+  height: 48px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1806,47 +1808,26 @@ button[disabled] {
   -o-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-.button--xxl {
-  width: 100%;
+.button--lg {
   height: 56px;
 }
-.button--xl {
-  width: 100%;
-  height: 48px;
-}
-.button--lg {
-  width: 100%;
-  height: 44px;
-}
-.button--md {
-  width: 100%;
-  height: 40px;
-}
 .button--sm {
-  width: 100%;
   height: 44px;
 }
 .button--xs {
-  width: 100%;
   height: 40px;
 }
 .button--search {
   font-size: 15px;
-}
-.button--search--lg {
-  width: 56px;
-  height: 56px;
-}
-.button--search--md {
-  width: 48px;
   height: 48px;
 }
+.button--search--lg {
+  height: 56px;
+}
 .button--search--sm {
-  width: 44px;
   height: 44px;
 }
 .button--search--xs {
-  width: 40px;
   height: 40px;
 }
 .button--icon-left .ui_search {
@@ -1969,7 +1950,7 @@ button[disabled] {
 .location .ui_location {
   margin-right: 6px;
 }
-.location .ui_flat-arrowDown {
+.location .ui_down-arrow {
   color: #9A9AA0;
   font-size: 7px;
   margin-left: 7px;
@@ -2030,7 +2011,7 @@ button[disabled] {
 .group--list--sm {
   height: 180px;
 }
-.group--item {
+.group__item {
   width: 100%;
   padding: 10px 12px;
   font-size: 14px;
@@ -2039,7 +2020,7 @@ button[disabled] {
   line-height: 20px;
   border-radius: 8px;
 }
-.group--item--right--checkbox {
+.group__item--right--checkbox {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -2051,16 +2032,16 @@ button[disabled] {
           align-items: center;
   position: relative;
 }
-.group--item--right--checkbox .checkbox--input {
+.group__item--right--checkbox .checkbox--input {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
   position: absolute;
 }
-.group--item--right--checkbox .checkbox--label {
+.group__item--right--checkbox .checkbox--label {
   cursor: pointer;
 }
-.group--item--right--checkbox .checkbox--label:before {
+.group__item--right--checkbox .checkbox--label:before {
   content: "";
   display: block;
   width: 12px;
@@ -2073,7 +2054,7 @@ button[disabled] {
   right: 16px;
   z-index: 1;
 }
-.group--item--right--checkbox .checkbox--label .ui_tick {
+.group__item--right--checkbox .checkbox--label .ui_tick {
   display: block;
   position: absolute;
   font-size: 10px;
@@ -2086,10 +2067,10 @@ button[disabled] {
   right: 16px;
   z-index: 2;
 }
-.group--item--right--checkbox .checkbox--input:checked + .checkbox--label .ui_tick {
+.group__item--right--checkbox .checkbox--input:checked + .checkbox--label .ui_tick {
   opacity: 1;
 }
-.group--item--left--checkbox {
+.group__item--left--checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2097,7 +2078,7 @@ button[disabled] {
       -ms-flex-align: center;
           align-items: center;
 }
-.group--item--left--checkbox .checkbox--input {
+.group__item--left--checkbox .checkbox--input {
   height: 16px;
   width: 16px;
   background-color: #5656FF;
@@ -2105,13 +2086,13 @@ button[disabled] {
   border: 1px solid #53535E;
   margin-right: 8px;
 }
-.group--item--left--checkbox .checkbox--label {
+.group__item--left--checkbox .checkbox--label {
   cursor: pointer;
 }
-.group--item--sm {
+.group__item--sm {
   padding: 6px 12px;
 }
-.group--item:hover, .group--item:focus {
+.group__item:hover, .group__item:focus {
   background-color: #F5F5F6;
   color: #5656FF;
 }
@@ -2132,23 +2113,21 @@ button[disabled] {
           align-items: center;
   color: #ffffff;
   cursor: pointer;
-  width: 60px;
-  height: 36px;
+  width: 100%;
+  height: 28px;
   border-radius: 50px;
   background-color: #5656FF;
 }
 .teg .ui_close {
   font-size: 8px;
 }
-.teg--md {
-  height: 28px;
+.teg--lg {
+  height: 36px;
 }
 .teg--sm {
-  width: 44px;
   height: 25px;
 }
 .teg--xs {
-  width: 36px;
   height: 18px;
   font-size: 12px;
   line-height: 14px;
@@ -2158,18 +2137,18 @@ button[disabled] {
   color: #5656FF;
 }
 .teg--close--btn {
-  width: 80px;
-  height: 36px;
-}
-.teg--close--btn--md {
   height: 28px;
 }
+.teg--close--btn .ui_close {
+  margin-left: 8px;
+}
+.teg--close--btn--lg {
+  height: 36px;
+}
 .teg--close--btn--sm {
-  width: 64px;
   height: 24px;
 }
 .teg--close--btn--xs {
-  width: 56px;
   height: 20px;
 }
 
@@ -2270,12 +2249,13 @@ button[disabled] {
   display: flex;
 }
 .tabs__item {
+  width: 100%;
   margin: 0 8px;
 }
 .tabs__button {
   font-size: 14px;
   font-weight: 500;
-  width: 133px;
+  width: 100%;
   height: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2297,7 +2277,6 @@ button[disabled] {
   outline: none;
 }
 .tabs__button--sm {
-  width: 125px;
   height: 28px;
 }
 .tabs__button--underline {
@@ -2349,7 +2328,7 @@ button[disabled] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 607px;
+  width: 100%;
   height: 44px;
   background-color: #F5F5F6;
   border-radius: 100px;
@@ -2386,7 +2365,7 @@ button[disabled] {
   margin-right: 6px;
   color: #0F0F1A;
 }
-.search--input .select__header .ui_flat-arrowDown {
+.search--input .select__header .ui_down-arrow {
   font-size: 8px;
   -webkit-transition-duration: 0.5s;
        -o-transition-duration: 0.5s;
@@ -2396,7 +2375,7 @@ button[disabled] {
 .search--input .select.active .select__header span {
   color: #5656FF;
 }
-.search--input .select.active .ui_flat-arrowDown {
+.search--input .select.active .ui_down-arrow {
   color: #5656FF;
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
@@ -2446,12 +2425,13 @@ button[disabled] {
   color: #9A9AA0;
 }
 .search--input .search--input__button {
+  width: 44px;
   position: absolute;
   right: 0;
   border-radius: 100px;
-  background-color: #E0E0E5;
+  background-color: transparent;
   top: 0;
-  border-color: #E0E0E5;
+  border-color: transparent;
   color: #9A9AA0;
 }
 .search--input .blue {
@@ -2464,7 +2444,7 @@ button[disabled] {
 .dropdown2,
 .dropdown3,
 .dropdownSm {
-  width: 250px;
+  width: 100%;
   height: 44px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2482,7 +2462,6 @@ button[disabled] {
 .dropdown2--sm,
 .dropdown3--sm,
 .dropdownSm--sm {
-  width: 122px;
   height: 40px;
 }
 .dropdown:hover, .dropdown:focus,
@@ -2520,10 +2499,10 @@ button[disabled] {
 .dropdownSm__header span .ui_listMenu {
   margin-right: 6px;
 }
-.dropdown__header .ui_flat-arrowDown,
-.dropdown2__header .ui_flat-arrowDown,
-.dropdown3__header .ui_flat-arrowDown,
-.dropdownSm__header .ui_flat-arrowDown {
+.dropdown__header .ui_down-arrow,
+.dropdown2__header .ui_down-arrow,
+.dropdown3__header .ui_down-arrow,
+.dropdownSm__header .ui_down-arrow {
   font-size: 8px;
   -webkit-transition-duration: 0.5s;
        -o-transition-duration: 0.5s;
@@ -2532,10 +2511,10 @@ button[disabled] {
   position: absolute;
   right: 16px;
 }
-.dropdown.active2 .ui_flat-arrowDown,
-.dropdown2.active2 .ui_flat-arrowDown,
-.dropdown3.active2 .ui_flat-arrowDown,
-.dropdownSm.active2 .ui_flat-arrowDown {
+.dropdown.active2 .ui_down-arrow,
+.dropdown2.active2 .ui_down-arrow,
+.dropdown3.active2 .ui_down-arrow,
+.dropdownSm.active2 .ui_down-arrow {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -2552,13 +2531,13 @@ button[disabled] {
 .dropdownSm.active2 .dropdown--standard {
   display: block;
 }
-.dropdown.active2 span, .dropdown.active2 .ui_flat-arrowDown,
+.dropdown.active2 span, .dropdown.active2 .ui_down-arrow,
 .dropdown2.active2 span,
-.dropdown2.active2 .ui_flat-arrowDown,
+.dropdown2.active2 .ui_down-arrow,
 .dropdown3.active2 span,
-.dropdown3.active2 .ui_flat-arrowDown,
+.dropdown3.active2 .ui_down-arrow,
 .dropdownSm.active2 span,
-.dropdownSm.active2 .ui_flat-arrowDown {
+.dropdownSm.active2 .ui_down-arrow {
   color: #5656FF;
 }
 .dropdown .hide,
@@ -2638,11 +2617,11 @@ label .input {
   /*Стили при правильном вводе данных*/
   /*Стили при неправильном вводе данных*/
 }
-label .input--xxl {
+label .input--lg {
   height: 56px;
   border-radius: 12px;
 }
-label .input--xxl:focus + .moving--text {
+label .input--lg:focus + .moving--text {
   -webkit-transform: translateY(-22px);
       -ms-transform: translateY(-22px);
           transform: translateY(-22px);
@@ -2650,15 +2629,11 @@ label .input--xxl:focus + .moving--text {
   font-weight: 500;
   line-height: 14px;
 }
-label .input--md {
-  height: 40px;
-}
 label .input--sm {
-  height: 32px;
+  height: 40px;
 }
 label .input--xs {
   height: 32px;
-  width: 200px;
 }
 label .input--xs:focus + .ui_tick {
   background-color: #5656FF;
@@ -2707,7 +2682,10 @@ label .input:invalid {
           box-shadow: initial;
   border: 1px solid transparent;
 }
-label .input:invalid {
+label .valid {
+  background-color: #E4FFF6;
+}
+label .invalid {
   background-color: #FFF4F4;
   color: #FF0000;
 }

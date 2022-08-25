@@ -113,56 +113,34 @@
 /*==================Это стили для кнопок==================*/
 
 .button {
-  &--xxl {
-    width: 100%;
+  width: 100%;
+  height: 48px;
+
+  &--lg {
     height: 56px;
   }
 
-  &--xl {
-    width: 100%;
-    height: 48px;
-  }
-
-  &--lg {
-    width: 100%;
-    height: 44px;
-  }
-
-  &--md {
-    width: 100%;
-    height: 40px;
-  }
-
   &--sm {
-    width: 100%;
     height: 44px;
   }
 
   &--xs {
-    width: 100%;
     height: 40px;
   }
 
   &--search {
     font-size: 15px;
+    height: 48px;
 
     &--lg {
-      width: 56px;
       height: 56px;
     }
 
-    &--md {
-      width: 48px;
-      height: 48px;
-    }
-
     &--sm {
-      width: 44px;
       height: 44px;
     }
 
     &--xs {
-      width: 40px;
       height: 40px;
     }
   }
@@ -332,7 +310,7 @@
     margin-right: 6px;
   }
 
-  .ui_flat-arrowDown {
+  .ui_down-arrow {
     color: $mono-grey;
     font-size: 7px;
     margin-left: 7px;
@@ -402,7 +380,7 @@
     }
   }
 
-  &--item {
+  &__item {
     width: 100%;
     padding: 10px 12px;
     font-size: 14px;
@@ -501,8 +479,8 @@
   align-items: center;
   color: $mono-white;
   cursor: pointer;
-  width: 60px;
-  height: 36px;
+  width: 100%;
+  height: 28px;
   border-radius: 50px;
   background-color: $main-blue-900;
 
@@ -510,17 +488,15 @@
     font-size: 8px;
   }
 
-  &--md {
-    height: 28px;
+  &--lg {
+    height: 36px;
   }
 
   &--sm {
-    width: 44px;
     height: 25px;
   }
 
   &--xs {
-    width: 36px;
     height: 18px;
     font-size: 12px;
     line-height: 14px;
@@ -532,20 +508,21 @@
   }
 
   &--close--btn {
-    width: 80px;
-    height: 36px;
+    height: 28px;
 
-    &--md {
-      height: 28px;
+    .ui_close {
+      margin-left: 8px;
+    }
+
+    &--lg {
+      height: 36px;
     }
 
     &--sm {
-      width: 64px;
       height: 24px;
     }
 
     &--xs {
-      width: 56px;
       height: 20px;
     }
   }
@@ -636,13 +613,14 @@
   display: flex;
 
   &__item {
+    width: 100%;
     margin: 0 8px;
   }
 
   &__button {
     font-size: 14px;
     font-weight: 500;
-    width: 133px;
+    width: 100%;
     height: 36px;
     display: flex;
     justify-content: center;
@@ -657,7 +635,6 @@
     outline: none;
 
     &--sm {
-      width: 125px;
       height: 28px;
     }
 
@@ -719,7 +696,7 @@
 .search--input {
   display: flex;
   align-items: center;
-  width: 607px;
+  width: 100%;
   height: 44px;
   background-color: $mono-bg-grey;
   border-radius: 100px;
@@ -753,7 +730,7 @@
         color: $mono-dark-black;
       }
 
-      .ui_flat-arrowDown {
+      .ui_down-arrow {
         font-size: 8px;
         transition-duration: 0.5s;
         color: $mono-dark-black;
@@ -765,7 +742,7 @@
       color: $main-blue-900;
     }
 
-    &.active .ui_flat-arrowDown {
+    &.active .ui_down-arrow {
       color: $main-blue-900;
       transform: rotate(180deg);
     }
@@ -806,12 +783,13 @@
   }
 
   .search--input__button {
+    width: 44px;
     position: absolute;
     right: 0;
     border-radius: 100px;
-    background-color: $mono-light-grey2;
+    background-color: transparent;
     top: 0;
-    border-color: $mono-light-grey2;
+    border-color: transparent;
     color: $mono-grey;
   }
 
@@ -827,7 +805,7 @@
 .dropdown2,
 .dropdown3,
 .dropdownSm {
-  width: 250px;
+  width: 100%;
   height: 44px;
   display: flex;
   align-items: center;
@@ -838,7 +816,6 @@
   position: relative;
 
   &--sm {
-    width: 122px;
     height: 40px;
   }
 
@@ -862,7 +839,7 @@
       }
     }
 
-    .ui_flat-arrowDown {
+    .ui_down-arrow {
       font-size: 8px;
       transition-duration: 0.5s;
       color: $mono-grey;
@@ -871,7 +848,7 @@
     }
   }
 
-  &.active2 .ui_flat-arrowDown {
+  &.active2 .ui_down-arrow {
     transform: rotate(180deg);
   }
 
@@ -882,7 +859,7 @@
   }
 
   &.active2 span,
-  &.active2 .ui_flat-arrowDown {
+  &.active2 .ui_down-arrow {
     color: $main-blue-900;
   }
 
@@ -949,7 +926,7 @@ label {
     padding: 12px 16px;
     transition: 0.4s ease-in-out;
 
-    &--xxl {
+    &--lg {
       height: 56px;
       border-radius: 12px;
 
@@ -961,17 +938,13 @@ label {
       }
     }
 
-    &--md {
-      height: 40px;
-    }
-
     &--sm {
-      height: 32px;
+      height: 40px;
     }
 
     &--xs {
       height: 32px;
-      width: 200px;
+      //width: 200px;
 
       &:focus + .ui_tick {
         background-color: $main-blue-900;
@@ -1023,14 +996,22 @@ label {
 
     /*Стили при неправильном вводе данных*/
 
-    &:invalid {
-      background-color: $main-red-400;
-      color: $main-red-900;
-    }
-
+    //&:invalid {
+    //  background-color: $main-red-400;
+    //  color: $main-red-900;
+    //}
+    //
     //&:valid {
     //  background-color: $main-green-400;
     //}
+  }
+
+  .valid {
+    background-color: $main-green-400;
+  }
+  .invalid {
+    background-color: $main-red-400;
+    color: $main-red-900;
   }
 
   .ui_tick {
