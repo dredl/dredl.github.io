@@ -162,7 +162,7 @@
     font-weight: 600;
     line-height: 22px;
     color: $mono-black;
-    width: 122px;
+    width: 100%;
     height: 42px;
     border-radius: 8px;
     background-color: initial;
@@ -377,6 +377,10 @@
 
     &--sm {
       height: 180px;
+
+      li {
+        padding: 6px 12px;
+      }
     }
   }
 
@@ -454,10 +458,6 @@
       .checkbox--label {
         cursor: pointer;
       }
-    }
-
-    &--sm {
-      padding: 6px 12px;
     }
 
     &:hover,
@@ -709,6 +709,11 @@
     border: 1px solid $mono-light-grey2;
   }
 
+  //Временный стиль
+  &.hover {
+    border: 1px solid $mono-light-grey2 !important;
+  }
+
   .select {
     position: absolute;
     top: 0;
@@ -913,7 +918,7 @@ label {
   }
 
   .input {
-    width: 335px;
+    width: 100%;
     height: 44px;
     outline: none;
     border: 1px solid transparent;
@@ -935,6 +940,15 @@ label {
         font-size: 12px;
         font-weight: 500;
         line-height: 14px;
+      }
+
+      &:not(:placeholder-shown) {
+        & + .moving--text {
+          transform: translateY(-22px);
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 14px;
+        }
       }
     }
 
@@ -961,6 +975,7 @@ label {
         border: 1px solid $mono-grey !important;
       }
 
+
       &:invalid {
         border: 1px solid $main-red-900;
         color: $main-red-900;
@@ -977,9 +992,27 @@ label {
       box-shadow: 0 0 15px rgba(27, 118, 255, 0.2);
     }
 
+    //Временный стиль
+    &.hover {
+      border: 1px solid $main-blue-900 !important;
+      box-shadow: 0 0 15px rgba(27, 118, 255, 0.2) !important;
+    }
+
     &:focus {
       box-shadow: initial;
       border: 1px solid transparent;
+    }
+
+    &:active {
+      border: 3px solid $main-blue-500 !important;
+      box-shadow: 0 0 15px rgba(27, 118, 255, 0.2);
+    }
+
+    //Временный стиль
+    &.active {
+      border: 3px solid $main-blue-500;
+      box-shadow: 0 0 15px rgba(27, 118, 255, 0.2);
+
     }
 
     //&:focus + .ui_close {
@@ -1009,9 +1042,22 @@ label {
   .valid {
     background-color: $main-green-400;
   }
+
   .invalid {
     background-color: $main-red-400;
     color: $main-red-900;
+  }
+
+  .valid--transparent {
+    border: 1px solid $mono-grey;
+    color: $mono-dark-grey;
+    background-color: initial;
+  }
+
+  .invalid--transparent {
+    color: $main-red-900;
+    border: 1px solid $main-red-900;
+    background-color: initial;
   }
 
   .ui_tick {
@@ -1041,6 +1087,30 @@ label {
     transform: translateY(-50%);
     color: $mono-grey;
     font-size: 11px;
+  }
+
+  .ui_eye {
+    position: absolute;
+    right: 16px;
+    z-index: 8;
+    cursor: pointer;
+    //display: none;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $mono-grey;
+    font-size: 18px;
+  }
+
+  .ui_eye-off {
+    position: absolute;
+    right: 16px;
+    z-index: 8;
+    cursor: pointer;
+    //display: none;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $mono-grey;
+    font-size: 18px;
   }
 
   .block {
@@ -1113,9 +1183,12 @@ label {
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
-  left: 2px;
+  left: -2px;
   background-color: $mono-grey;
   transition: 0.5s;
+  animation-name: span_anim_off;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .switcher:disabled:before {
@@ -1127,11 +1200,48 @@ label {
   left: 22px;
   box-shadow: 0 5px 6px -2px rgba(72, 167, 255, 0.2);
   background-color: $main-blue-900;
+  animation-name: span_anim_on;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .switcher:checked:disabled:before {
   background-color: $main-blue-600;
   box-shadow: 0 5px 6px -2px rgba(72, 167, 255, 0.2);
+}
+
+@keyframes span_anim_on {
+  0% {
+    width: 20px;
+    background-color: $mono-grey;
+  }
+
+  20% {
+    width: 29px;
+    border-radius: 40px;
+    background-color: $mono-grey;
+  }
+
+  100% {
+    width: 20px;
+
+  }
+}
+
+@keyframes span_anim_off {
+  0% {
+    width: 20px;
+    margin-left: 2px;
+  }
+
+  20% {
+    width: 29px;
+  }
+
+  100% {
+    width: 20px;
+    margin-left: 5px;
+  }
 }
 
 .text-checkbox--wrapper {
@@ -1163,7 +1273,8 @@ label {
 /*====================СТИЛИ ДЛЯ КАРТОЧЕК ТОВАРОВ =====================*/
 /*Обычная Карточка*/
 .card {
-  width: 252px;
+  width: 100%;
+  max-width: 252px;
   display: flex;
   flex-direction: column;
   border: 1px solid transparent;
@@ -1198,7 +1309,7 @@ label {
       color: $mono-dark-black;
       margin-bottom: 4px;
 
-      .ui_star {
+      .ui_star-filled {
         font-size: 14px;
         color: $help-yellow;
       }
@@ -1413,6 +1524,10 @@ label {
 }
 
 /*==================================Стили Для Заказов=================================*/
+.orders-wrapper .orders {
+  margin-bottom: 20px;
+
+}
 
 .orders {
   display: flex;
@@ -1680,6 +1795,7 @@ label {
 
 /*===============================Кнопки, переключатели====================================*/
 
+
 .date {
   display: flex;
   align-items: center;
@@ -1703,6 +1819,11 @@ label {
 }
 
 //Кнопки, с ракетой
+.rockets {
+  button {
+    margin-bottom: 20px;
+  }
+}
 
 .like-button {
   outline: none;
@@ -1741,18 +1862,26 @@ label {
   }
 }
 
+.hover {
+  background-color: $main-blue-900;
+  color: $mono-white;
+}
+
 //Кнопки, с иконкой добавления и закрытия
 
-.btn {
+.btn-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0;
   background-color: $main-blue-900;
   border-color: $main-blue-900;
   width: 28px;
   height: 28px;
+  outline: none;
   border-radius: 8px;
   color: $mono-white;
+
 
   .ui_plus,
   .ui_close {
@@ -1832,4 +1961,486 @@ label {
   top: 0;
   left: 0;
   object-fit: contain;
+}
+
+.icons-wrapper {
+  i {
+    margin-right: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+
+//Кнопки  со стрелками
+.btn {
+  width: 100%;
+  min-width: 48px;
+  height: 48px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: initial;
+  border-color: transparent;
+  color: $mono-dark-black;
+  font-size: 13px;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background-color: $main-blue-900;
+    border-color: $main-blue-900;
+    color: $mono-white;
+  }
+
+  //Временный стиль
+  &.hover {
+    background-color: $main-blue-900;
+    border-color: $main-blue-900;
+    color: $mono-white;
+  }
+
+  &:active {
+    background-color: $main-blue-700;
+    border-color: $main-blue-700;
+    color: $mono-white;
+  }
+
+  //Временный стиль
+  &.active {
+    background-color: $main-blue-700;
+    border-color: $main-blue-700;
+    color: $mono-white;
+  }
+}
+
+
+//Стили для star rating
+
+.star,
+.star-yellow {
+  background-color: unset;
+  border: none;
+  outline: none;
+  color: $mono-light-grey1;
+  font-size: 18px;
+}
+
+
+//Стили для заголовок
+
+
+.categories-title {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  color: $mono-dark-black;
+
+  &--lg {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  &--sm {
+    line-height: 24px;
+    font-size: 20px;
+
+  }
+
+  .ui_right-arrow {
+    font-size: 7px;
+    margin-left: 3px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $main-blue-900;
+  }
+
+
+}
+
+.hover-title {
+  color: $main-blue-900;
+}
+
+
+//Стили для товаров
+
+
+.component-properties {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $main-blue-300;
+  }
+
+  &:hover h4 {
+    color: $main-blue-900;
+  }
+
+  .leftSide {
+    display: flex;
+
+    .flag {
+      font-size: 24px;
+      color: $help-peach;
+      position: relative;
+      height: 34px;
+
+      span {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        color: $mono-white;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+      }
+
+      .ui_Flag {
+        width: 100%;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin-left: 8px;
+
+      h4 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $mono-dark-black;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+      }
+
+      .country {
+        margin-right: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        color: $mono-dark-black;
+      }
+
+      .years {
+        width: 46px;
+        margin-right: 34px;
+        text-transform: uppercase;
+      }
+
+      .review {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        color: $mono-dark-black;
+        margin-bottom: 4px;
+
+        .ui_star-filled {
+          font-size: 14px;
+          color: $help-yellow;
+        }
+
+        div:last-child {
+          margin-left: 5px;
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 22px;
+        }
+      }
+    }
+
+  }
+
+  .rightSide {
+    display: flex;
+    align-items: center;
+
+    .images {
+      display: flex;
+
+      .image:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+
+    .statistics {
+      display: flex;
+
+      .sales,
+      .deals {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        margin-left: 40px;
+
+        p {
+          font-size: 10px;
+          font-weight: 700;
+          line-height: 16px;
+          color: $mono-grey;
+          text-transform: uppercase;
+        }
+
+        div {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 24px;
+          color: $mono-dark-black;
+
+
+        }
+      }
+
+
+    }
+  }
+}
+
+//Временный стиль
+.hover-properties {
+  background-color: $main-blue-300;
+}
+
+.stock-properties {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  padding: 6px 16px;
+
+  &:hover,
+  &:focus {
+    background: rgba(86, 86, 255, 0.05);
+  }
+
+
+  .leftSide {
+    display: flex;
+    align-items: center;
+
+    .image {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-right: 4px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+
+    .name {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 14px;
+      color: $mono-dark-black;
+    }
+  }
+
+  .rightSide {
+    display: flex;
+    align-items: center;
+
+    .num1,
+    .num2,
+    .num3 {
+      font-size: 12px;
+      font-weight: 500;
+      margin-left: 24px;
+      line-height: 14px;
+      color: $mono-dark-black;
+
+      span {
+        color: $main-red-900;
+      }
+
+
+    }
+
+    .num2 {
+      color: $main-green-900;
+    }
+
+    .num3 {
+      display: flex;
+      align-items: center;
+
+      span {
+        color: $main-green-900;
+        margin-right: 6px;
+      }
+
+      .state-up {
+        color: $main-green-900;
+
+        .ui_arrowDown-green {
+          width: 10px;
+        }
+
+        &--x2 {
+          position: relative;
+
+          .ui_state-up {
+            position: absolute;
+            top: -3px;
+            left: 0;
+          }
+
+          .ui_state-up:last-child {
+            position: absolute;
+            top: -9px;
+            left: 0;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+//Временный стиль
+.hover-stock-properties {
+  background: rgba(86, 86, 255, 0.05);
+}
+
+
+.product-buying {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: $mono-bg-grey;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+
+  &__image {
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    span:first-child {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 14px;
+      color: #1B1B1B;
+
+    }
+
+    span:nth-of-type(2) {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14px;
+      color: $mono-grey;
+      margin-top: 2px;
+      margin-bottom: 6px;
+
+    }
+
+    .delivery-time {
+      display: flex;
+      align-items: center;
+      color: #9D9EA3;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14px;
+
+      .ui_truck {
+        font-size: 12px;
+        color: #9D9EA3;
+        margin-right: 9px;
+
+      }
+    }
+  }
+
+  &__close-icon {
+    position: absolute;
+    right: 21px;
+    top: 13px;
+
+    .ui_close {
+      color: #9A9AA0;
+      font-size: 10px;
+    }
+
+
+  }
+}
+
+//Стили для Карточек с Едой
+
+.foods-cards {
+  display: flex;
+  flex-direction: row;
+
+  .card {
+    position: relative;
+
+    img {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    .text {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      color: $mono-dark-black;
+
+      .ui_right-arrow {
+        font-size: 12px;
+      }
+
+    }
+  }
+
+  .card:last-child .text {
+    color: $main-blue-900;
+  }
+}
+
+.action--card{
+  height: 32px;
 }
