@@ -1,0 +1,10 @@
+.registration-stage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.registration-stage__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

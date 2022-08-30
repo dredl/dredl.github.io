@@ -1,0 +1,97 @@
+/*
+|--------------------------------------------------------------------------
+| Velocity Variables
+|--------------------------------------------------------------------------
+|
+| Below are all the variables used in Velocity's SCSS.
+|
+*/
+/* theme colors */
+$theme-color: #26A37C;
+$theme-dark-color: #247959;
+
+/* background colors */
+$light-background: #F7F7F9;
+
+/* font colors */
+$font-color: rgba(0,0,0,0.83);
+$font-color-light: rgba(255, 255, 255, 0.83);
+
+/* button colors */
+$button-danger: #F05153;
+$button-primary-bg: #21A179;
+$button-text-color: #FFFFFF;
+
+/* border colors */
+$border-common: #CCCCCC;
+$border-danger: #F05153;
+$border-dark: #DCDCDC;
+$border-general: #E5E5E5;
+$border-light: #ECECEC;
+$border-primary: #269c77;
+
+/* link colors */
+$link-color: #4D7EA8;
+$light-link-color: #28557B;
+
+/* remaining colors */
+$black-color: #111111;
+$danger-color: #F05153;
+$grey-color: rgb(158, 158, 158);
+$light1-black: #141516;
+$light2-black: #cfcfd0;
+$white-color: #FFFFFF;
+
+/* other stuffs */
+$sidebar-width: 230px;
+$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+$material-icons-font-path: '../material-icons/iconfont/' !default;
+$border-normal: 1px solid $border-dark;
+$font-family-pro: 'Source Sans Pro', sans-serif;
+
+
+$control-border-color: #C7C7C7;
+$selection-color: rgba(0, 64, 255, 0.6);
+$brand-color: #0041FF;
+
+//Цветовая Палитра Most
+
+// MONO
+$mono-dark-black: #0F0F1A;
+$mono-black: #20202C;
+$mono-dark-grey: #53535E;
+$mono-grey: #9A9AA0;
+$mono-light-grey1: #C5C5C9;
+$mono-light-grey2: #E0E0E5;
+$mono-bg-grey: #F5F5F6;
+$mono-bg-grey-light: #f9f9f9;
+$mono-white: #ffffff;
+
+// MAIN
+$main-blue-900: #5656FF;
+$main-blue-800: #7A7AFF;
+$main-blue-700: #9696FF;
+$main-blue-600: #BFBFFF;
+$main-blue-500: #E0E0FF;
+$main-blue-400: #F3F3FF;
+$main-blue-300: #F2F2FA;
+
+$main-red-900: #FF0000;
+$main-red-800: #FF4545;
+$main-red-700: #FF7171;
+$main-red-600: #FF9A9A;
+$main-red-500: #FFC5C5;
+$main-red-400: #FFF4F4;
+
+$main-green-900: #0EBA80;
+$main-green-800: #17E19C;
+$main-green-700: #44F9BB;
+$main-green-600: #83FFD5;
+$main-green-500: #AFFFE4;
+$main-green-400: #E4FFF6;
+
+$help-yellow: #FFE318;
+$help-peach: #FA8244;
+$help-peach-100: #ffeadf;
+$help-yellow-100: #FFF4A6;
+$help-gold: #EEB82C;
